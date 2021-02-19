@@ -97,3 +97,8 @@ button:hover {
   color: #79a3b1;
   cursor: pointer;
 }
+
+.fasfa-cloud i {
+  display: block;
+  margin: 0 auto;
+}
