@@ -39,8 +39,14 @@ function locationTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#temperature");
   let h1 = document.querySelector("h1");
+  let description = document.querySelector("description"); 
+  let humidity = document.querySelector("humidity"); 
+  let wind = document.querySelector ("wind")
   mainTemp.innerHTML = `${currentTemp} °C`;
   h1.innerHTML = response.data.name;
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity; 
+  wind.innerHTML = response.data.wind.speed; 
 }
 
 function showPosition(position) {

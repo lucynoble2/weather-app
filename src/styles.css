@@ -98,7 +98,6 @@ button:hover {
   cursor: pointer;
 }
 
-.fasfa-cloud i {
-  display: block;
-  margin: 0 auto;
+.text-center p {
+  font-size: 80px;
 }
