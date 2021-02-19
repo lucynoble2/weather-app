@@ -39,7 +39,7 @@ function showTemp(response) {
 function locationTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#temperature");
-  let h1 = document.querySelector("#h1");
+  let h1 = document.querySelector("#main-city");
   let description = document.querySelector("#description"); 
   let humidity = document.querySelector("#humidity"); 
   let wind = document.querySelector ("#wind")
