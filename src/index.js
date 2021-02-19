@@ -27,6 +27,7 @@ function changeCity(event) {
   let apiKey = "47cade4c3ac315c8cba1fb1e18be0d29";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showTemp);
+  axios.get(apiURL).then(locationTemp);
 }
 
 function showTemp(response) {
@@ -38,10 +39,10 @@ function showTemp(response) {
 function locationTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#temperature");
-  let h1 = document.querySelector("h1");
-  let description = document.querySelector("description"); 
-  let humidity = document.querySelector("humidity"); 
-  let wind = document.querySelector ("wind")
+  let h1 = document.querySelector("#h1");
+  let description = document.querySelector("#description"); 
+  let humidity = document.querySelector("#humidity"); 
+  let wind = document.querySelector ("#wind")
   mainTemp.innerHTML = `${currentTemp} °C`;
   h1.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;

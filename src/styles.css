@@ -98,6 +98,16 @@ button:hover {
   cursor: pointer;
 }
 
-.text-center p {
-  font-size: 80px;
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+#main-city {
+  clear: both;
 }
