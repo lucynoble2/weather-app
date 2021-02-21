@@ -80,6 +80,7 @@ function locationTemp(response) {
   let humidity = document.querySelector("#humidity"); 
   let wind = document.querySelector ("#wind"); 
   let icon = document.querySelector ("#icon"); 
+  celsiusTemperature = response.data.main.temp; 
   mainTemp.innerHTML = `${currentTemp} °C`;
   h1.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
@@ -101,10 +102,30 @@ function getPosition(event) {
   event.preventDefault();
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault(); 
+  let temperature = document.querySelector("#temperature"); 
+  let fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32; 
+  temperature.innerHTML = Math.round(fahrenheitTemperature); 
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault(); 
+  let temperature = document.querySelector("#temperature"); 
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
 navigator.geolocation.getCurrentPosition(showPosition);
+
+let celsiusTemperature = null; 
 
 let search = document.querySelector("form");
 search.addEventListener("submit", changeCity);
 
 let button = document.querySelector("button");
 button.addEventListener("click", getPosition);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link"); 
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+search ("New York"); 
