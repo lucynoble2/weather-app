@@ -42,12 +42,14 @@ function locationTemp(response) {
   let h1 = document.querySelector("#main-city");
   let description = document.querySelector("#description"); 
   let humidity = document.querySelector("#humidity"); 
-  let wind = document.querySelector ("#wind")
+  let wind = document.querySelector ("#wind"); 
+  let icon = document.querySelector ("#icon"); 
   mainTemp.innerHTML = `${currentTemp} °C`;
   h1.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity; 
-  wind.innerHTML = response.data.wind.speed; 
+  wind.innerHTML = Math.round(response.data.wind.speed); 
+  icon.setAttribute ("class", `http://openweathermap.org/img/wn/${respond.data.weather[0].icon}.png`);
 }
 
 function showPosition(position) {
