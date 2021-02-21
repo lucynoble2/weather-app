@@ -36,6 +36,42 @@ function showTemp(response) {
   temp.innerHTML = `${currentTemp} °C`;
 }
 
+function getIcon(icon) {
+  let iconElement = "";
+  if (icon === "03d" || icon === "03n") {
+    iconElement = "fas fa-cloud";
+  } else if (icon === "04d") {
+    iconElement = "fas fa-cloud";
+  } else if (icon === "04n") {
+    iconElement = "fas fa-cloud";
+  } else if (icon === "01d") {
+    iconElement = "fas fa-sun";
+  } else if (icon === "01n") {
+    iconElement = "fas fa-moon";
+  } else if (icon === "02d") {
+    iconElement = "fas fa-cloud-sun";
+  } else if (icon === "02n") {
+    iconElement = "fas fa-cloud-moon";
+  } else if (icon === "09d") {
+    iconElement = "fas fa-cloud-showers-heavy";
+  } else if (icon === "09n") {
+    iconElement = "fas fa-cloud-showers-heavy";
+  } else if (icon === "10d") {
+    iconElement = "fas fa-cloud-rain";
+  } else if (icon === "10n") {
+    iconElement = "fas fa-cloud-rain";
+  } else if (icon === "13d") {
+    iconElement = "far fa-snowflake";
+  } else if (icon === "13n") {
+    iconElement = "far fa-snowflake";
+  } else if (icon === "50d") {
+    iconElement = "fas fa-stream";
+  } else if (icon === "50n") {
+    iconElement = "fas fa-stream";
+  }
+  return iconElement;
+}
+
 function locationTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#temperature");
@@ -49,7 +85,7 @@ function locationTemp(response) {
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity; 
   wind.innerHTML = Math.round(response.data.wind.speed); 
-  icon.setAttribute ("class", `http://openweathermap.org/img/wn/${respond.data.weather[0].icon}.png`);
+  iconElement.setAttribute("class", getIcon(response.data.weather[0].icon));
 }
 
 function showPosition(position) {
