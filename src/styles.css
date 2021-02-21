@@ -42,7 +42,7 @@
 
 form {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 input {
@@ -54,8 +54,8 @@ input {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  padding-top: 40px;
-  color: #999b84;
+  padding-top: 20px;
+  color: #d8ac9c;
 }
 
 .col {
@@ -85,7 +85,7 @@ i {
 button {
   display: block;
   margin: 20px auto;
-  padding: 40px, 20px;
+  padding: 10px, 20px;
   background-color: #79a3b1;
   color: #ffff;
   border: 2px solid #d8ac9c;
@@ -113,6 +113,17 @@ button:hover {
   clear: both;
 }
 
-.text-center img {
-  width: 100 px;
+a {
+  color: #d8ac9c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #79a3b1;
+}
+
+#icon {
+  font-size: 45px;
+  padding-bottom: 20px;
 }
